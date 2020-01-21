@@ -33,7 +33,7 @@ Objetos json.
 
 * Dado:
 
-```shell
+```json
 {
    "nome" : "Nome do Dado",
    "tipo" : "NUMERICO",  ##NUMERICO ou LOGICO
@@ -50,7 +50,7 @@ Objetos json.
 ```
 * Empresa:
 
-```shell
+```json
 {
     "cnpj" : "000000000000",
     "razao_social" : "razao social",
@@ -63,7 +63,7 @@ Objetos json.
 ```
 * Consulta:
 
-```shell
+```json
 {
 	"nome" : "nome consulta",
 	"listaConceito": [
