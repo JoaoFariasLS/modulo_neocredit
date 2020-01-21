@@ -13,4 +13,8 @@ public class DadoEmpresa {
     private String valor;
     @ManyToOne
     private Dado dado;
+
+    public boolean isDadoType(Dado dado){
+        return this.dado.getId() == dado.getId();
+    }
 }

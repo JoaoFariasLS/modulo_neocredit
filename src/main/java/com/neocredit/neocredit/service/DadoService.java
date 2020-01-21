@@ -25,7 +25,10 @@ public class DadoService {
         repository.deleteById(id);
     }
     public Dado getById(Long id){
-        return repository.getOne(id);
+        return repository.findDadoById(id);
+    }
+    public Dado getByNome(String nome){
+        return repository.findDadoByNome(nome);
     }
     public List<Dado> getAll(){
         return repository.findAll();

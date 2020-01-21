@@ -31,6 +31,7 @@ public class ConsultaController {
         try{
             return new ResponseEntity<ConsultaExecucao>(service.executarConsulta(id, listaCnpj), HttpStatus.CREATED);
         }catch (Exception e){
+            e.printStackTrace();
             return new ResponseEntity<ConsultaExecucao>(HttpStatus.BAD_REQUEST);
         }
     }

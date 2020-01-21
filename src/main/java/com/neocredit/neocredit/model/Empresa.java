@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,7 +17,15 @@ public class Empresa {
     private String razao_social;
     private String nome_fantasia;
     @OneToMany
-    @JoinColumn(name = "empresa_id")
     @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
     private List<DadoEmpresa> listaDado;
+
+    public DadoEmpresa getDadoEmpresaByDado(Dado dado){
+        for(DadoEmpresa de: this.listaDado){
+            if(de.isDadoType(dado)){
+                return de;
+            }
+        }
+        return null;
+    }
 }

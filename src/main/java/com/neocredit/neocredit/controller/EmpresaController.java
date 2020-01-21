@@ -24,6 +24,15 @@ public class EmpresaController {
         }
     }
 
+    @PostMapping("/list")
+    public ResponseEntity<List<Empresa>> save(@RequestBody List<Empresa> listEmpresa){
+        try{
+            return new ResponseEntity<List<Empresa>>(service.save(listEmpresa), HttpStatus.CREATED);
+        }catch (Exception e){
+            return new ResponseEntity<List<Empresa>>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
     @GetMapping
     public ResponseEntity<List<Empresa>> get(){
         try{
